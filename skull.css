@@ -11,8 +11,9 @@
     --light-grey: #eee;
     --white: #fff;
 
-    --color-negative: #e66;
-    --color-positive: #6e6;
+    --color-invalid: #e66;
+    --color-warning: #ea4;
+    --color-valid: #6e6;
     --color-info: #8ef;
     --color-primary: #66e;
 }
@@ -33,7 +34,6 @@ body {
 }
 
 .container {
-    position: relative;
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
@@ -126,6 +126,11 @@ button.primary:hover,
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+form > * {
+  margin-top: calc(var(--spacing) / 2);
+  margin-bottom: calc(var(--spacing) / 2);
+}
+
 input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
 textarea,
 select {
@@ -139,6 +144,11 @@ select {
     font-size: 1.5rem;
     width: 100%;
     min-width: 0;
+}
+.row > :not([type="radio"]):not([type="checkbox"]):not([type="range"]),
+.row > textarea,
+.row > select {
+    width: auto;
 }
 /* Removes awkward default styles on some inputs for iOS */
 input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
@@ -167,7 +177,7 @@ label > input[type="file"] {
 input:invalid:not(:placeholder-shown),
 textarea:invalid:not(:placeholder-shown),
 select:invalid:not(:placeholder-shown) {
-    border: 1px solid var(--color-negative);
+    border: 1px solid var(--color-invalid);
     outline: 0;
 }
 input:focus,
@@ -300,6 +310,30 @@ td:last-child {
     margin-right: calc(var(--spacing) * 8);
 }
 
+.padding {
+    padding: var(--spacing);
+}
+.padding-x2 {
+    padding: calc(var(--spacing) * 2);
+}
+.padding-horizontal {
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+}
+.padding-horizontal-x2 {
+    padding-left: calc(var(--spacing) * 2);
+    padding-right: calc(var(--spacing) * 2);
+}
+
+.padding-vertical {
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+}
+.padding-x2-vertical {
+    padding-top: calc(var(--spacing) * 2);
+    padding-bottom: calc(var(--spacing) * 2);
+}
+
 .column.glued > *:not(:last-child) {
     margin-bottom: 0;
     border-bottom-left-radius: 0;
@@ -347,34 +381,54 @@ td:last-child {
     margin-left: calc(-1 * var(--spacing));
     margin-right: calc(-1 * var(--spacing));
 }
-.row.no-wrap {
-    flex-flow: row;
-}
-.row.top {
-    align-items: flex-start;
-}
-.row.stretch {
-    align-items: stretch;
-}
-.row.middle {
-    align-items: center;
-}
-.row.center {
-    justify-content: center;
-}
+
 .row > * {
     margin-left: var(--spacing);
     margin-right: var(--spacing);
     width: 100%;
 }
+
+.row.no-wrap {
+    flex-flow: row;
+}
+
+.row.top {
+    align-items: flex-start;
+}
+
+.row.stretch {
+    align-items: stretch;
+}
+
+.row.middle {
+    align-items: center;
+}
+
+.row.center {
+    justify-content: center;
+}
+
 .column {
     display: flex;
     flex-flow: column;
+}
+.column > * {
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+}
+
+.column.center {
+    align-items: center;
+}
+
+.column.middle {
     justify-content: center;
 }
+
 .grow {
     flex-grow: 1;
 }
+
 @media (min-width: 600px) {
     .row > * {
         width: auto;

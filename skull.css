@@ -1,0 +1,458 @@
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root{
+    --spacing: 1rem;
+    --border-radius: 4px;
+
+    --black: #000;
+    --dark-grey: #222;
+    --middle-grey: #888;
+    --light-grey: #eee;
+    --white: #fff;
+
+    --color-negative: #e66;
+    --color-positive: #6e6;
+    --color-info: #8ef;
+    --color-primary: #66e;
+}
+html {
+    /* html is set to 10px, so 1rem = 10px */
+    font-size: 10px;
+}
+body {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222;
+}
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+}
+.full-width {
+  width: 100%;
+}
+.fluid {
+  max-width: 100%;
+}
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+@media (min-width: 600px) {
+    h1 { font-size: 5.0rem; }
+    h2 { font-size: 4.2rem; }
+    h3 { font-size: 3.6rem; }
+    h4 { font-size: 3.0rem; }
+    h5 { font-size: 2.4rem; }
+    h6 { font-size: 1.5rem; }
+}
+
+p {
+    margin-top: 0;
+}
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+    color: #1EAEDB;
+}
+a:not(.button):hover,
+a:not(.button):focus {
+    color: #0FA0CE;
+}
+
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button, .button {
+    display: inline-block;
+    height: 38px;
+    padding: 0 var(--spacing);
+    color: var(--middle-grey);
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--middle-grey);
+    background-color: var(--white);
+    cursor: pointer;
+}
+.primary {
+    color: var(--white);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+    filter: brightness(90%);
+}
+button.primary:focus,
+button.primary:hover,
+.button.primary:focus,
+.button.primary:hover {
+    filter: brightness(110%);
+}
+
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
+textarea,
+select {
+    height: 38px;
+    /* The 6px vertically centers text on FF, ignored by Webkit */
+    padding: 6px 10px;
+    background-color: var(--white);
+    border: 1px solid var(--middle-grey);
+    border-radius: var(--border-radius);
+    box-shadow: none;
+    font-size: 1.5rem;
+    width: 100%;
+    min-width: 0;
+}
+/* Removes awkward default styles on some inputs for iOS */
+input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+textarea {
+    min-height: 65px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+label {
+    position: relative;
+}
+label > input[type="file"] {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown),
+select:invalid:not(:placeholder-shown) {
+    border: 1px solid var(--color-negative);
+    outline: 0;
+}
+input:focus,
+textarea:focus,
+select:focus {
+    border: 1px solid var(--color-info);
+    outline: 0;
+}
+label,
+legend {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+fieldset {
+    padding: 0;
+    border-width: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline;
+}
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+    list-style: circle inside;
+}
+ol {
+    list-style: decimal inside;
+}
+ul.no-list, ol.no-list {
+    list-style: none;
+}
+ol, ul {
+    padding-left: 0;
+    margin-top: 0;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin: 1.5rem 0 1.5rem 3rem;
+    font-size: 90%;
+}
+.no-list-style {
+    list-style: none;
+    margin: 0;
+}
+
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+    padding: .2rem .5rem;
+    margin: 0 .2rem;
+    font-size: 90%;
+    white-space: nowrap;
+    background: var(--light-grey);
+    border: 1px solid var(--light-grey);
+    border-radius: var(--border-radius);
+}
+pre > code {
+    display: block;
+    padding: 1rem 1.5rem;
+    white-space: pre-wrap;
+}
+
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+table {
+    border-collapse: collapse;
+}
+th,
+td {
+    padding: calc(var(--spacing) * 0.6) calc(var(--spacing) * 0.75);
+    text-align: left;
+    border-bottom: 1px solid var(--light-grey);
+}
+th:first-child,
+td:first-child {
+    padding-left: 0;
+}
+th:last-child,
+td:last-child {
+    padding-right: 0;
+}
+
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.spacing {
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+}
+.spacing-x2 {
+    margin-top: calc(var(--spacing) * 2);
+    margin-bottom: calc(var(--spacing) * 2);
+}
+.spacing-x4 {
+    margin-top: calc(var(--spacing) * 4);
+    margin-bottom: calc(var(--spacing) * 4);
+}
+.spacing-x8 {
+    margin-top: calc(var(--spacing) * 8);
+    margin-bottom: calc(var(--spacing) * 8);
+}
+.spacing-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.margin {
+    margin-left: var(--spacing);
+    margin-right: var(--spacing);
+}
+.margin-x2 {
+    margin-left: calc(var(--spacing) * 2);
+    margin-right: calc(var(--spacing) * 2);
+}
+.margin-x4 {
+    margin-left: calc(var(--spacing) * 4);
+    margin-right: calc(var(--spacing) * 4);
+}
+.margin-x8 {
+    margin-left: calc(var(--spacing) * 8);
+    margin-right: calc(var(--spacing) * 8);
+}
+
+.column.glued > *:not(:last-child) {
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.column.glued > *:not(:first-child) {
+    margin-top: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.row.glued > *:not(:last-child) {
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.row.glued > *:not(:first-child) {
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+/* Colors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.bg-light-grey {
+    background-color: var(--light-grey);
+}
+
+
+/* Card
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.card {
+    padding: var(--spacing);
+    color: var(--dark-grey);
+    border: 1px solid var(--dark-grey);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+}
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.row {
+    display: flex;
+    flex-flow: wrap;
+    margin-left: calc(-1 * var(--spacing));
+    margin-right: calc(-1 * var(--spacing));
+}
+.row.no-wrap {
+    flex-flow: row;
+}
+.row.top {
+    align-items: flex-start;
+}
+.row.stretch {
+    align-items: stretch;
+}
+.row.middle {
+    align-items: center;
+}
+.row.center {
+    justify-content: center;
+}
+.row > * {
+    margin-left: var(--spacing);
+    margin-right: var(--spacing);
+    width: 100%;
+}
+.column {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.grow {
+    flex-grow: 1;
+}
+@media (min-width: 600px) {
+    .row > * {
+        width: auto;
+    }
+    .cell-1  { width: calc( 1 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-2  { width: calc( 2 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-3  { width: calc( 3 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-4  { width: calc( 4 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-5  { width: calc( 5 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-6  { width: calc( 6 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-7  { width: calc( 7 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-8  { width: calc( 8 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-9  { width: calc( 9 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-10 { width: calc(10 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-11 { width: calc(11 * 100% / 12 - var(--spacing) * 2) !important; }
+    .cell-12 { width: calc(12 * 100% / 12 - var(--spacing) * 2) !important; }
+    
+    /* Offsets */
+    .offset-1  { margin-left: calc( 1 * 100% / 12 + var(--spacing)); }
+    .offset-2  { margin-left: calc( 2 * 100% / 12 + var(--spacing)); }
+    .offset-3  { margin-left: calc( 3 * 100% / 12 + var(--spacing)); }
+    .offset-4  { margin-left: calc( 4 * 100% / 12 + var(--spacing)); }
+    .offset-5  { margin-left: calc( 5 * 100% / 12 + var(--spacing)); }
+    .offset-6  { margin-left: calc( 6 * 100% / 12 + var(--spacing)); }
+    .offset-7  { margin-left: calc( 7 * 100% / 12 + var(--spacing)); }
+    .offset-8  { margin-left: calc( 8 * 100% / 12 + var(--spacing)); }
+    .offset-9  { margin-left: calc( 9 * 100% / 12 + var(--spacing)); }
+    .offset-10 { margin-left: calc(10 * 100% / 12 + var(--spacing)); }
+    .offset-11 { margin-left: calc(11 * 100% / 12 + var(--spacing)); }
+}
+
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.clear {
+    clear: both;
+}
+.center {
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+    border-width: 0;
+    border-top: 1px solid var(--middle-grey);
+}
+.divider {
+    border-width: 0;
+    border-top: 1px solid var(--middle-grey);
+    margin: 0;
+}
+@media (min-width: 600px) {
+    .divider {
+        border-width: 0;
+        border-left: 1px solid var(--middle-grey);
+        margin: 0;
+        margin-left: -1px;
+    }
+}
+
+
+@media (min-width: 600px) {}
+@media (min-width: 800px) {}
+@media (min-width: 1000px) {}
+@media (min-width: 1200px) {}

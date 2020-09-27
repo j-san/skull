@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skull</title>
+  <link href="skull.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="description" content="Yet Another CSS Library, but Modern 🤘">
+  <meta name="author" content="Jonathan Sanchez">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!-- Grid -->
+<div class="container">
+  <center class="spacing-x8">
+    <h1>Yet Another CSS Library, but Modern 🤘</h1>
+    <a class="button primary">Github</a>
+    <a class="button">Install</a>
+  </center>
+  <center class="spacing-x2">
+    <ul class="row card no-list-style">
+      <li class="cell-4 spacing">
+        <div><img src="http://getskeleton.com/images/feather.svg" /></div>
+        <strong>Lightweight and deadly simple.</strong>
+        With only a few kb of css, you can focus on performance and awsomeness.
+      </li>
+      <li class="divider"></li>
+      <li class="cell-4 spacing">
+        <div><img src="http://getskeleton.com/images/watch.svg" /></div>
+        <strong>Vanilla css only.</strong>
+        Works with any css compilator, by using flexbox, var, calc, etc it fit any project but not all browser.
+      </li>
+      <li class="divider"></li>
+      <li class="cell-4 spacing">
+        <div><img src="http://getskeleton.com/images/pens.svg" /></div>
+        <strong>Themable and extendable.</strong>
+        Just overwride variable and the whole layout will change, write your own comonnents and share them with the world.
+      </li>
+    </ul>
+  </center>
+  <h3>The grid</h3>
+  <p>The grid is a <u>12-column fluid grid with a max width of 960px</u>, that shrinks with the browser/device at smaller sizes. The max width can be changed with one line of CSS and all columns will resize accordingly. The syntax is simple and it makes coding responsive much easier. Go ahead, resize the browser. </p>
+
+<!-- CODE EXAMPLE ———————————————————————————————————————— -->
+<div id="example-grid">
+  <!-- .container is main centered wrapper -->
+  <div class="row">
+    <code class="spacing cell-1">One</code>
+    <code class="spacing cell-11">Eleven</code>
+  </div>
+  <div class="row">
+    <code class="spacing cell-2">Two</code>
+    <code class="spacing cell-10">Ten</code>
+  </div>
+  <div class="row">
+    <code class="spacing cell-4">Four</code>
+    <code class="spacing cell-8">Eight</code>
+  </div>
+  <div class="row">
+    <code class="spacing cell-6">Six</code>
+    <code class="spacing cell-6">Six</code>
+  </div>
+  <div class="row">
+    <code class="spacing cell-10">Ten</code>
+    <code class="spacing cell-2">Two</code>
+  </div>
+  <div class="row no-wrap">
+    <code class="spacing grow">20%</code>
+    <code class="spacing grow">20%</code>
+    <code class="spacing grow">20%</code>
+    <code class="spacing grow">20%</code>
+    <code class="spacing grow">20%</code>
+  </div>
+  <div class="row">
+    <code class="spacing grow">Title, takes available space</code>
+    <code class="spacing button">Action</code>
+  </div>
+</div>
+<!-- ————————————————————————————————————————————————————— -->
+
+  <pre class="code-example"><code class="code-example-body" data-target="#example-grid">
+    </code></pre>
+
+  <!-- Typography -->
+  <div id="typography">
+    <h3>Typography</h3>
+    <p>Type is all set with the <code>rems</code>, so font-sizes and spacial relationships can be responsively sized based on a single <code>&lt;html&gt;</code> font-size property. Out of the box, Skeleton never changes the <code>&lt;html&gt;</code> font-size, but it's there in case you need it for your project. All measurements are still base 10 though so, an <code>&lt;h1&gt;</code> with <code>5.0rem</code>font-size just means <code>50px</code>.</p>
+    <div>
+      <div class="row">
+        <div class="cell-6">
+          <p><strong>The typography base</strong> is <a href="http://www.google.com/fonts/specimen/Raleway">Raleway</a> served by Google, set at 15rem (15px) over a 1.6 line height (24px). Other type basics like <a href="#">anchors</a>, <strong>strong</strong>, <em>emphasis</em>, and <u>underline</u> are all obviously included.</p>
+          <p><strong>Headings</strong> create a family of distinct sizes each with specific <code>letter-spacing</code>, <code>line-height</code>, and <code>spacings</code>.</p>
+        </div>
+
+<!-- CODE EXAMPLE ———————————————————————————————————————— -->
+<div class="cell-6" id="example-typography">
+  <h1>Heading &lt;h1&gt;</h1>
+  <h2>Heading &lt;h2&gt;</h2>
+  <h3>Heading &lt;h3&gt;</h3>
+  <h4>Heading &lt;h4&gt;</h4>
+  <h5>Heading &lt;h5&gt;</h5>
+  <h6>Heading &lt;h6&gt;</h6>
+
+  <p>
+    <!-- Other styled text tags -->
+    <strong>Bolded</strong>
+    <em>Italicized</em>
+    <a>Colored</a>
+    <u>Underlined</u>
+  </p>
+</div>
+<!-- ————————————————————————————————————————————————————— -->
+
+      </div>
+    </div>
+  </div>
+
+  <pre class="code-example"><code class="code-example-body" data-target="#example-typography">
+    </code></pre>
+
+  <!-- Buttons -->
+  <div id="buttons">
+    <h3>Buttons</h3>
+    <p>Buttons come in two basic flavors in Skeleton. The standard <code>&lt;button&gt;</code> element is plain, whereas the <code>.primary</code> button is vibrant and prominent. Button styles are applied to a number of appropriate form elements, but can also be arbitrarily attached to anchors with a <code>.button</code> class.</p>
+
+<!-- CODE EXAMPLE ———————————————————————————————————————— -->
+<div id="example-button">
+  <div class="spacing">
+    <!-- Standard buttons -->
+    <a class="button" href="#">Anchor button</a>
+    <button class="button">Button element</button>
+    <input class="button" type="submit" value="submit input">
+    <input class="button" type="button" value="button input">
+  </div>
+  <div class="spacing">
+    <!-- Primary buttons -->
+    <a class="button primary" href="#">Anchor button</a>
+    <button class="button primary">Button element</button>
+    <input class="button primary" type="submit" value="submit input">
+    <input class="button primary" type="button" value="button input">
+  </div>
+</div>
+<!-- ————————————————————————————————————————————————————— -->
+
+    <pre class="code-example"><code class="code-example-body" data-target="#example-button">
+      </code></pre>
+  </div>
+
+  <!-- Buttons -->
+  <div id="buttons">
+    <h3>Cards, spacing and glued</h3>
+    <div id="example-cards">
+      <div class="row">
+        <div class="cell-4 card spacing column">
+          <h4>Card 1</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          </p>
+        </div>
+        <div class="cell-4 card spacing column">
+          <h4>Card 2</h4>
+          <p>
+            Lorem ipsum dolor sit amet...
+          </p>
+        </div>
+        <div class="cell-4 card spacing column">
+          <h4>Card 3</h4>
+          <p>
+            Lorem ipsum...
+          </p>
+        </div>
+    </div>
+      <div class="row">
+        <div class="cell-4">
+          <div class="column glued spacing">
+            <div class="card"><br /></div>
+            <div class="card"><br /></div>
+            <div class="card"><br /></div>
+          </div>
+        </div>
+        <div class="cell-4">
+          <div class="row no-wrap glued spacing">
+            <div class="card grow"><br /></div>
+            <div class="card grow"><br /></div>
+            <div class="card grow"><br /></div>
+          </div>
+        </div>
+        <div class="cell-4">
+          <div class="column">
+            <div class="row no-wrap glued spacing">
+              <div class="card grow">a</div>
+              <div class="card grow">b</div>
+              <div class="card grow">c</div>
+            </div>
+            <div class="row no-wrap glued spacing">
+              <button class="grow button">⬅️</button>
+              <button class="grow button">⬆️</button>
+              <button class="grow button">➡️</button>
+            </div>
+            <div class="row no-wrap glued spacing">
+              <input class="grow" type="text" placeholder="input..." />
+              <input class="grow" type="text" placeholder="input..." />
+              <input class="grow" type="text" placeholder="input..." />
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Forms -->
+  <div id="forms">
+    <h3>Forms</h3>
+    <p>Forms are a huge pain, but hopefully these styles make it a bit easier. All inputs, select, and buttons are normalized for a common height cross-browser so inputs can be stacked or placed alongside each other.</p>
+    <div id="example-form">
+      <form>
+        <div class="row">
+          <div class="spacing cell-6">
+            <label for="email">Your email</label>
+            <input id="email" type="email" required placeholder="test@mailbox.com">
+          </div>
+          <div class="spacing cell-6">
+            <label for="reason">Reason for contacting</label>
+            <select id="reason">
+              <option value="Option 1">Questions</option>
+              <option value="Option 2">Admiration</option>
+              <option value="Option 3">Can I get your number?</option>
+            </select>
+          </div>
+        </div>
+        <div class="spacing">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Hi Dave 👋"></textarea>
+        </div>
+        <label class="spacing">
+          <!-- Always wrap checkbox and radio inputs in a label -->
+          <input type="checkbox"> Send a copy to yourself
+        </label>
+        <div class="spacing">
+          <input class="button primary" type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+
+
+    <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+    <pre class="code-example"><code class="code-example-body" data-target="#example-form"></code></pre>
+    <!-- ————————————————————————————————————————————————————— -->
+  </div>
+
+  <!-- Lists -->
+  <div id="lists">
+    <h3>Lists</h3>
+    <div class="row ">
+      <div class="six cells">
+        <ul>
+          <li>Unordered lists have basic styles</li>
+          <li>
+            They use the circle list style
+            <ul>
+              <li>Nested lists styled to feel right</li>
+              <li>Can nest either type of list into the other</li>
+            </ul>
+          </li>
+          <li>Just more list items mama san</li>
+        </ul>
+      </div>
+      <div class="six columns">
+        <ol>
+          <li>Ordered lists also have basic styles</li>
+          <li>
+            They use the decimal list style
+            <ul>
+              <li>Ordered and unordered can be nested</li>
+              <li>Can nest either type of list into the other</li>
+            </ul>
+          </li>
+          <li>Last list item just for the fun</li>
+        </ol>
+      </div>
+    </div>
+
+
+<!-- CODE EXAMPLE ———————————————————————————————————————— -->
+<pre class="code-example"><code class="code-example-body"><ul>
+<li>Item 1</li>
+<li>
+  Item 2
+  <ul>
+    <li>Item 2.1</li>
+    <li>Item 2.2</li>
+  </ul>
+</li>
+<li>Item 3</li>
+</ul>
+
+<!-- Easily substitute any <ul> or an <ol> to get number lists or sublists. Skeleton doesn't support lists nested deeper than 2 levels -->
+</code></pre>
+<!-- ————————————————————————————————————————————————————— -->
+
+
+  </div>
+
+  <!-- Code -->
+  <div id="code">
+    <h3>Code</h3>
+    <p>Code styling is kept basic – just wrap anything in a <code>&lt;code&gt;</code> and it will appear like <code>this</code>. For blocks of code, wrap a <code>&lt;code&gt;</code> with a <code>&lt;pre&gt;</code>.</p>
+    <div class="">
+<pre><code>.some-class {
+background-color: red;</code></pre>
+    </div>
+
+
+<!-- CODE EXAMPLE ———————————————————————————————————————— -->
+<pre class="code-example"><code class="code-example-body"><pre><code>.some-class {
+background-color: red;</code></pre>
+
+<!-- Remember every whitespace and break will be preserved in a <pre>, including indentation in your code -->
+</code></pre>
+<!-- ————————————————————————————————————————————————————— -->
+
+
+  </div>
+
+  <!-- Tables -->
+  <div id="tables">
+    <h3>Tables</h3>
+    <p>Be sure to use properly formed table markup with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> when building a <code>table</code>.</p>
+    <div class="">
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dave Gamache</td>
+            <td>26</td>
+            <td>Male</td>
+            <td>San Francisco</td>
+          </tr>
+          <tr>
+            <td>Dwayne Johnson</td>
+            <td>42</td>
+            <td>Male</td>
+            <td>Hayward</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+<!-- CODE EXAMPLE ———————————————————————————————————————— -->
+<pre class="code-example"><code class="code-example-body"><table class="u-full-width">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Sex</th>
+    <th>Location</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Dave Gamache</td>
+    <td>26</td>
+    <td>Male</td>
+    <td>San Francisco</td>
+  </tr>
+  <tr>
+    <td>Dwayne Johnson</td>
+    <td>42</td>
+    <td>Male</td>
+    <td>Hayward</td>
+  </tr>
+</tbody>
+</table>
+</code></pre>
+<!-- ————————————————————————————————————————————————————— -->
+
+
+  </div>
+
+  <!-- Queries -->
+  <div id="queries">
+    <h3>Media queries</h3>
+    <p>Skeleton uses media queries to serve its scalable grid, but also has a list of queries for convenience of styling your site across devices. The queries are mobile-first, meaning they target <code>min-width</code>. Mobile-first queries are how Skeleton's grid is built and is the preferrable method of organizing CSS. It means all styles outside of a query apply to all devices, then larger devices are targeted for enhancement. This prevents small devices from having to parse tons of unused CSS. The sizes for the queries are:</p>
+    <div class=" row">
+      <div class="six columns">
+        <ul>
+          <li><strong>Desktop HD</strong>: 1200px</li>
+          <li><strong>Desktop</strong>: 1000px</li>
+          <li><strong>Tablet</strong>: 750px</li>
+        </ul>
+      </div>
+      <div class="six columns">
+        <ul>
+          <li><strong>Phablet</strong>: 550px</li>
+          <li><strong>Mobile</strong>: 400px</li>
+        </ul>
+      </div>
+    </div>
+
+
+<!-- CODE EXAMPLE ———————————————————————————————————————— -->
+<pre class="code-example"><code class="code-example-body">/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+
+</code></pre>
+<!-- ————————————————————————————————————————————————————— -->
+
+
+  </div>
+
+
+  <!-- Utilities and Misc. -->
+  <div id="utilities">
+    <h3>Utilities</h3>
+    <p>Skeleton has a number of small utility classes that act as easy-to-use helpers. Sometimes it's better to use a utility class than create a whole new class just to float an element.</p>
+
+
+<!-- CODE EXAMPLE ———————————————————————————————————————— -->
+<pre class="code-example"><code class="code-example-body">/* Utility Classes */
+
+/* Make element full width */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+
+/* Make sure elements don't run outside containers (great for images in columns) */
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+
+/* Float either direction */
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+
+/* Clear a float */
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+</code></pre>
+<!-- ————————————————————————————————————————————————————— -->
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.code-example-body').forEach(function(e) {
+    if (e.dataset.target) {
+      e.innerText = document.querySelector(e.dataset.target).innerHTML;
+    } else {
+      e.innerText = e.innerHTML;
+    }
+  });
+</script>
+</body>
+</html>

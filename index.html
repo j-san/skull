@@ -7,10 +7,15 @@
   <meta name="description" content="Yet Another CSS Library, but Modern 🤘">
   <meta name="author" content="Jonathan Sanchez">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" />
+  <style>
+    :root {
+      --body-font-family: Raleway;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Grid -->
 <div class="container">
   <center class="spacing-x8">
     <h1>Yet Another CSS Library, but Modern 🤘</h1>
@@ -18,73 +23,201 @@
     <a href="https://github.com/j-san/skull#install" class="button">Install</a>
   </center>
   <center class="spacing-x2">
-    <ul class="row card no-list-style">
+    <ul class="row no-list-style dividers">
       <li class="cell-4 spacing">
-        <div><img src="http://getskeleton.com/images/feather.svg" /></div>
+        <div><img src="img/feather.svg" /></div>
         <strong>Lightweight and deadly simple.</strong>
-        With only a few kb of css, you can focus on performance and awsomeness.
+        Based on the great <a href="http://getskeleton.com">Skeleton</a>, with only a few kb of css.
       </li>
-      <li class="divider"></li>
       <li class="cell-4 spacing">
-        <div><img src="http://getskeleton.com/images/watch.svg" /></div>
-        <strong>Vanilla css only.</strong>
-        Works with any css compilator, by using flexbox, var, calc, etc it fit any project but not all browser.
-      </li>
-      <li class="divider"></li>
-      <li class="cell-4 spacing">
-        <div><img src="http://getskeleton.com/images/pens.svg" /></div>
+        <div><img src="img/pens.svg" /></div>
         <strong>Themable and extendable.</strong>
-        Just overwride variable and the whole layout will change, write your own comonnents and share them with the world.
+        Flexible and straight forward, with css variables, theme your components and install packages.
+      </li>
+      <li class="cell-4 spacing">
+        <div><img src="img/watch.svg" /></div>
+        <strong>Vanilla css only.</strong>
+        By using new css technics, it works with any css bundlers and transpilers.
       </li>
     </ul>
   </center>
-  <h3>The grid</h3>
-  <p>The grid is a <u>12-column fluid grid with a max width of 960px</u>, that shrinks with the browser/device at smaller sizes. The max width can be changed with one line of CSS and all columns will resize accordingly. The syntax is simple and it makes coding responsive much easier. Go ahead, resize the browser. </p>
+
+  <!-- Grid -->
+  <h2>The grid</h2>
+  <p>The grid is a <u>12-column fluid grid with a max width of 960px</u>, that shrinks with the browser/device at smaller sizes. It's using flexbox so cells can take remaining space with the <code>.grow</code> css class. The syntax is simple and it makes coding responsive much easier. Go ahead, resize the browser.</p>
 
 <!-- CODE EXAMPLE ———————————————————————————————————————— -->
 <div id="example-grid">
   <!-- .container is main centered wrapper -->
   <div class="row">
-    <code class="spacing cell-1">One</code>
-    <code class="spacing cell-11">Eleven</code>
+    <code class="cell-1">One</code>
+    <code class="cell-11">Eleven</code>
   </div>
   <div class="row">
-    <code class="spacing cell-2">Two</code>
-    <code class="spacing cell-10">Ten</code>
+    <code class="cell-2">Two</code>
+    <code class="cell-10">Ten</code>
   </div>
   <div class="row">
-    <code class="spacing cell-4">Four</code>
-    <code class="spacing cell-8">Eight</code>
+    <code class="cell-4">Four</code>
+    <code class="cell-8">Eight</code>
   </div>
   <div class="row">
-    <code class="spacing cell-6">Six</code>
-    <code class="spacing cell-6">Six</code>
+    <code class="cell-6">Six</code>
+    <code class="cell-6">Six</code>
   </div>
   <div class="row">
-    <code class="spacing cell-10">Ten</code>
-    <code class="spacing cell-2">Two</code>
-  </div>
-  <div class="row no-wrap">
-    <code class="spacing grow">20%</code>
-    <code class="spacing grow">20%</code>
-    <code class="spacing grow">20%</code>
-    <code class="spacing grow">20%</code>
-    <code class="spacing grow">20%</code>
+    <code class="cell-10">Ten</code>
+    <code class="cell-2">Two</code>
   </div>
   <div class="row">
-    <code class="spacing grow">Title, takes available space</code>
-    <code class="spacing button">Action</code>
+    <code class="grow">20%</code>
+    <code class="grow">20%</code>
+    <code class="grow">20%</code>
+    <code class="grow">20%</code>
+    <code class="grow">20%</code>
+  </div>
+  <div class="row">
+    <code class="grow">Grow, it will takes available space</code>
+    <code class="button">Action</code>
   </div>
 </div>
 <!-- ————————————————————————————————————————————————————— -->
 
-  <pre class="code-example"><code class="code-example-body" data-target="#example-grid">
+  <!-- Grid -->
+  <h2>Rows and columns</h2>
+  <p>Row or colum display is made using css class and controlling allinment and justified content with css class names.</p>
+
+<!-- CODE EXAMPLE ———————————————————————————————————————— -->
+<div id="example-rows-columns">
+  <!-- .container is main centered wrapper -->
+  <div class="row no-wrap">
+    <div class="card">
+      <div><code>.no-wrap</code> control the flow and avoid to wrap to new lines when it should normally wrap</div>
+    </div>
+    <div class="card">Another container that should wrap due to spacing</div>
+  </div>
+
+  <h4>Vertical alignment</h4>
+  <div class="row no-wrap dividers">
+    <div class="grow">
+      <div class="row top" style="height: 200px;">
+        <code class="grow">Top</code>
+        <code class="grow">Alligned</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="row middle" style="height: 200px;">
+        <code class="grow">Middle</code>
+        <code class="grow">Alligned</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="row bottom" style="height: 200px;">
+        <code class="grow">Bottom</code>
+        <code class="grow">Alligned</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="row stretch" style="height: 200px;">
+        <code class="grow">Stretch</code>
+        <code class="grow">Alligned</code>
+      </div>
+    </div>
+  </div>
+
+  <h4>Horizontal alignment</h4>
+  <div class="row no-wrap dividers">
+    <div class="grow">
+      <div class="column left">
+        <code class="grow">Left</code>
+        <code class="grow">Alligned</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="column center">
+        <code class="grow">Center</code>
+        <code class="grow">Alligned</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="column right">
+        <code class="grow">Right</code>
+        <code class="grow">Alligned</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="column stretch">
+        <code class="grow">Stretch</code>
+        <code class="grow">Alligned</code>
+      </div>
+    </div>
+  </div>
+
+  <h4>Vertical justifying</h4>
+  <div class="row no-wrap dividers">
+    <div class="grow">
+      <div class="column top" style="height: 200px;">
+        <code>Top</code>
+        <code>Justified</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="column middle" style="height: 200px;">
+        <code>Middle</code>
+        <code>Justified</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="column bottom" style="height: 200px;">
+        <code>Bottom</code>
+        <code>Justified</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="column between" style="height: 200px;">
+        <code>Between</code>
+        <code>Justified</code>
+      </div>
+    </div>
+  </div>
+
+  <h4>Horizontal justifying</h4>
+  <div class="column dividers">
+    <div class="grow">
+      <div class="row left">
+        <code>Left</code>
+        <code>Justified</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="row center">
+        <code>Center</code>
+        <code>Justified</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="row right">
+        <code>Right</code>
+        <code>Justified</code>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="row between">
+        <code>Between</code>
+        <code>Justified</code>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ————————————————————————————————————————————————————— -->
+
+  <pre class="code-example"><code class="code-example-body" data-target="#example-rows-columns">
     </code></pre>
 
   <!-- Typography -->
   <div id="typography">
-    <h3>Typography</h3>
-    <p>Type is all set with the <code>rems</code>, so font-sizes and spacial relationships can be responsively sized based on a single <code>&lt;html&gt;</code> font-size property. Out of the box, Skeleton never changes the <code>&lt;html&gt;</code> font-size, but it's there in case you need it for your project. All measurements are still base 10 though so, an <code>&lt;h1&gt;</code> with <code>5.0rem</code>font-size just means <code>50px</code>.</p>
+    <h2>Typography</h2>
+    <p>Type is all set with <code>ems</code>, so font-sizes and spacial relationships can be responsively sized based on a container font-size. Out of the box, it will inherit font-size from <code>&lt;html&gt;</code>. All measurements are still base 10 though so, an <code>&lt;h1&gt;</code> with <code>5.0em</code>font-size just means <code>50px</code>.</p>
     <div>
       <div class="row">
         <div class="cell-6">
@@ -96,7 +229,7 @@
 <div class="cell-6" id="example-typography">
   <h1>Heading &lt;h1&gt;</h1>
   <h2>Heading &lt;h2&gt;</h2>
-  <h3>Heading &lt;h3&gt;</h3>
+  <h2>Heading &lt;h3&gt;</h2>
   <h4>Heading &lt;h4&gt;</h4>
   <h5>Heading &lt;h5&gt;</h5>
   <h6>Heading &lt;h6&gt;</h6>
@@ -120,24 +253,22 @@
 
   <!-- Buttons -->
   <div id="buttons">
-    <h3>Buttons</h3>
-    <p>Buttons come in two basic flavors in Skeleton. The standard <code>&lt;button&gt;</code> element is plain, whereas the <code>.primary</code> button is vibrant and prominent. Button styles are applied to a number of appropriate form elements, but can also be arbitrarily attached to anchors with a <code>.button</code> class.</p>
+    <h2>Buttons</h2>
+    <p>Buttons come in two basic flavors in Skull. The standard <code>&lt;button&gt;</code> element is plain, whereas the <code>.primary</code> button is vibrant and prominent. Button styles are applied to a number of appropriate form elements, but can also be arbitrarily attached to anchors with a <code>.button</code> class.</p>
 
 <!-- CODE EXAMPLE ———————————————————————————————————————— -->
 <div id="example-button">
-  <div class="spacing">
+  <div class="spacing row">
     <!-- Standard buttons -->
+    <button>Button element</button>
     <a class="button" href="#">Anchor button</a>
-    <button class="button">Button element</button>
     <input class="button" type="submit" value="submit input">
-    <input class="button" type="button" value="button input">
   </div>
-  <div class="spacing">
+  <div class="spacing row">
     <!-- Primary buttons -->
+    <button class="primary">Button element</button>
     <a class="button primary" href="#">Anchor button</a>
-    <button class="button primary">Button element</button>
     <input class="button primary" type="submit" value="submit input">
-    <input class="button primary" type="button" value="button input">
   </div>
 </div>
 <!-- ————————————————————————————————————————————————————— -->
@@ -148,7 +279,7 @@
 
   <!-- Buttons -->
   <div id="buttons">
-    <h3>Cards, spacing and glued</h3>
+    <h2>Cards, spacing and glued</h2>
     <div id="example-cards">
       <div class="row">
         <div class="cell-4 card spacing column">
@@ -172,14 +303,14 @@
     </div>
       <div class="row">
         <div class="cell-4">
-          <div class="column glued spacing">
+          <div class="column glued">
             <div class="card"><br /></div>
             <div class="card"><br /></div>
             <div class="card"><br /></div>
           </div>
         </div>
         <div class="cell-4">
-          <div class="row no-wrap glued spacing">
+          <div class="row no-wrap glued">
             <div class="card grow"><br /></div>
             <div class="card grow"><br /></div>
             <div class="card grow"><br /></div>
@@ -187,17 +318,17 @@
         </div>
         <div class="cell-4">
           <div class="column">
-            <div class="row no-wrap glued spacing">
+            <div class="row no-wrap glued">
               <div class="card grow">a</div>
               <div class="card grow">b</div>
               <div class="card grow">c</div>
             </div>
-            <div class="row no-wrap glued spacing">
+            <div class="row no-wrap glued">
               <button class="grow button">⬅️</button>
               <button class="grow button">⬆️</button>
               <button class="grow button">➡️</button>
             </div>
-            <div class="row no-wrap glued spacing">
+            <div class="row no-wrap glued">
               <input class="grow" type="text" placeholder="input..." />
               <input class="grow" type="text" placeholder="input..." />
               <input class="grow" type="text" placeholder="input..." />
@@ -209,7 +340,7 @@
 
   <!-- Forms -->
   <div id="forms">
-    <h3>Forms</h3>
+    <h2>Forms</h2>
     <p>Forms are a huge pain, but hopefully these styles make it a bit easier. All inputs, select, and buttons are normalized for a common height cross-browser so inputs can be stacked or placed alongside each other.</p>
     <div id="example-form">
       <form>
@@ -249,7 +380,7 @@
 
   <!-- Lists -->
   <div id="lists">
-    <h3>Lists</h3>
+    <h2>Lists</h2>
     <div class="row ">
       <div class="six cells">
         <ul>
@@ -293,7 +424,7 @@
 <li>Item 3</li>
 </ul>
 
-<!-- Easily substitute any <ul> or an <ol> to get number lists or sublists. Skeleton doesn't support lists nested deeper than 2 levels -->
+<!-- Easily substitute any <ul> or an <ol> to get number lists or sublists. Skull doesn't support lists nested deeper than 2 levels -->
 </code></pre>
 <!-- ————————————————————————————————————————————————————— -->
 
@@ -302,7 +433,7 @@
 
   <!-- Code -->
   <div id="code">
-    <h3>Code</h3>
+    <h2>Code</h2>
     <p>Code styling is kept basic – just wrap anything in a <code>&lt;code&gt;</code> and it will appear like <code>this</code>. For blocks of code, wrap a <code>&lt;code&gt;</code> with a <code>&lt;pre&gt;</code>.</p>
     <div class="">
 <pre><code>.some-class {
@@ -323,7 +454,7 @@ background-color: red;</code></pre>
 
   <!-- Tables -->
   <div id="tables">
-    <h3>Tables</h3>
+    <h2>Tables</h2>
     <p>Be sure to use properly formed table markup with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> when building a <code>table</code>.</p>
     <div class="">
       <table class="u-full-width">
@@ -386,8 +517,8 @@ background-color: red;</code></pre>
 
   <!-- Queries -->
   <div id="queries">
-    <h3>Media queries</h3>
-    <p>Skeleton uses media queries to serve its scalable grid, but also has a list of queries for convenience of styling your site across devices. The queries are mobile-first, meaning they target <code>min-width</code>. Mobile-first queries are how Skeleton's grid is built and is the preferrable method of organizing CSS. It means all styles outside of a query apply to all devices, then larger devices are targeted for enhancement. This prevents small devices from having to parse tons of unused CSS. The sizes for the queries are:</p>
+    <h2>Media queries</h2>
+    <p>Skull uses media queries to serve its scalable grid, but also has a list of queries for convenience of styling your site across devices. The queries are mobile-first, meaning they target <code>min-width</code>. Mobile-first queries are how Skull's grid is built and is the preferrable method of organizing CSS. It means all styles outside of a query apply to all devices, then larger devices are targeted for enhancement. This prevents small devices from having to parse tons of unused CSS. The sizes for the queries are:</p>
     <div class=" row">
       <div class="six columns">
         <ul>
@@ -433,8 +564,8 @@ background-color: red;</code></pre>
 
   <!-- Utilities and Misc. -->
   <div id="utilities">
-    <h3>Utilities</h3>
-    <p>Skeleton has a number of small utility classes that act as easy-to-use helpers. Sometimes it's better to use a utility class than create a whole new class just to float an element.</p>
+    <h2>Utilities</h2>
+    <p>Skull has a number of small utility classes that act as easy-to-use helpers. Sometimes it's better to use a utility class than create a whole new class just to float an element.</p>
 
 
 <!-- CODE EXAMPLE ———————————————————————————————————————— -->

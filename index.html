@@ -14,205 +14,225 @@
     }
   </style>
 </head>
-<body>
 
+<body>
 <div class="container">
   <center class="spacing-x8">
     <h1>Yet Another CSS Library, but Modern 🤘</h1>
-    <a href="https://github.com/j-san/skull" class="button primary">Github</a>
-    <a href="https://github.com/j-san/skull#install" class="button">Install</a>
+    <a href="https://github.com/j-san/skull" class="button primary margin">Github</a>
+    <a href="https://github.com/j-san/skull#install" class="button margin">Install</a>
   </center>
   <center class="spacing-x2">
     <ul class="row no-list-style dividers">
       <li class="cell-4 spacing">
         <div><img src="img/feather.svg" /></div>
         <strong>Lightweight and deadly simple.</strong>
-        Based on the great <a href="http://getskeleton.com">Skeleton</a>, with only a few kb of css.
+        Based on the great <a href="http://getskeleton.com">Skeleton</a>, with only a few kb of css and no dependencies.
       </li>
       <li class="cell-4 spacing">
         <div><img src="img/pens.svg" /></div>
         <strong>Themable and extendable.</strong>
-        Flexible and straight forward, with css variables, theme your components and install packages.
+        Theme components and install packages in any styling language.
       </li>
       <li class="cell-4 spacing">
         <div><img src="img/watch.svg" /></div>
         <strong>Vanilla css only.</strong>
-        By using new css technics, it works with any css bundlers and transpilers.
+        Flexible and straight forward vanilla css using latest css features.
       </li>
     </ul>
   </center>
 
-  <!-- Grid -->
-  <h2>The grid</h2>
-  <p>The grid is a <u>12-column fluid grid with a max width of 960px</u>, that shrinks with the browser/device at smaller sizes. It's using flexbox so cells can take remaining space with the <code>.grow</code> css class. The syntax is simple and it makes coding responsive much easier. Go ahead, resize the browser.</p>
+  <div id="grid">
+    <!-- Grid -->
+    <h2>The grid</h2>
+    <p>The grid is a <u>12-column fluid grid with a max width of 960px</u>, that shrinks with the browser/device at smaller sizes. It's using flexbox so cells can take remaining space with the <code>.grow</code> css class. The syntax is simple and it makes coding responsive much easier. Go ahead, resize the browser.</p>
 
-<!-- CODE EXAMPLE ———————————————————————————————————————— -->
-<div id="example-grid">
-  <!-- .container is main centered wrapper -->
-  <div class="row">
-    <code class="cell-1">One</code>
-    <code class="cell-11">Eleven</code>
+    <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+    <div id="example-grid">
+
+<div class="row">
+  <code class="cell-1">One</code>
+  <code class="cell-11">Eleven</code>
+</div>
+<div class="row">
+  <code class="cell-2">Two</code>
+  <code class="cell-10">Ten</code>
+</div>
+<div class="row">
+  <code class="cell-4">Four</code>
+  <code class="cell-8">Eight</code>
+</div>
+<div class="row">
+  <code class="cell-6">Six</code>
+  <code class="cell-6">Six</code>
+</div>
+<div class="row">
+  <code class="cell-7">Seven</code>
+  <code class="cell-5">Five</code>
+</div>
+<div class="row">
+  <code class="cell-9">Nine</code>
+  <code class="cell-3">Three</code>
+</div>
+<div class="row">
+  <code class="grow">20%</code>
+  <code class="grow">20%</code>
+  <code class="grow">20%</code>
+  <code class="grow">20%</code>
+  <code class="grow">20%</code>
+</div>
+<div class="row">
+  <code class="grow">Grow, it will takes available space</code>
+  <code class="button">Action</code>
+</div>
+
+    </div>
+    <pre class="code-example spacing"><code class="code-example-body spacing" data-target="#example-grid"></code></pre>
+    <!-- ————————————————————————————————————————————————————— -->
   </div>
-  <div class="row">
-    <code class="cell-2">Two</code>
-    <code class="cell-10">Ten</code>
+
+  <div id="flex">
+    <!-- Flex -->
+    <h2>Flex</h2>
+    <p>Row or colum display is made using css class and controlling allinment and justified content with css class names.</p>
+
+    <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+    <div id="example-rows-columns">
+
+<!-- .container is main centered wrapper -->
+<div class="row no-wrap">
+  <div class="card">
+    <div><code>.no-wrap</code> control the flow and avoid to wrap to new lines when it should normally wrap</div>
   </div>
-  <div class="row">
-    <code class="cell-4">Four</code>
-    <code class="cell-8">Eight</code>
+  <div class="card">Another container that should wrap due to spacing</div>
+</div>
+
+<div class="column dividers glued">
+  <div>
+    <h4>Vertical alignment</h4>
+    <div class="row no-wrap dividers">
+      <div class="grow">
+        <div class="row top" style="height: 200px;">
+          <code class="grow">Top</code>
+          <code class="grow">Alligned</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="row middle" style="height: 200px;">
+          <code class="grow">Middle</code>
+          <code class="grow">Alligned</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="row bottom" style="height: 200px;">
+          <code class="grow">Bottom</code>
+          <code class="grow">Alligned</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="row stretch" style="height: 200px;">
+          <code class="grow">Stretch</code>
+          <code class="grow">Alligned</code>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <code class="cell-6">Six</code>
-    <code class="cell-6">Six</code>
+
+  <div>
+    <h4>Horizontal alignment</h4>
+    <div class="row no-wrap dividers">
+      <div class="grow">
+        <div class="column left">
+          <code class="grow">Left</code>
+          <code class="grow">Alligned</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="column center">
+          <code class="grow">Center</code>
+          <code class="grow">Alligned</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="column right">
+          <code class="grow">Right</code>
+          <code class="grow">Alligned</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="column stretch">
+          <code class="grow">Stretch</code>
+          <code class="grow">Alligned</code>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <code class="cell-10">Ten</code>
-    <code class="cell-2">Two</code>
+
+  <div>
+    <h4>Vertical justifying</h4>
+    <div class="row no-wrap dividers">
+      <div class="grow">
+        <div class="column top" style="height: 200px;">
+          <code>Top</code>
+          <code>Justified</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="column middle" style="height: 200px;">
+          <code>Middle</code>
+          <code>Justified</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="column bottom" style="height: 200px;">
+          <code>Bottom</code>
+          <code>Justified</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="column between" style="height: 200px;">
+          <code>Between</code>
+          <code>Justified</code>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <code class="grow">20%</code>
-    <code class="grow">20%</code>
-    <code class="grow">20%</code>
-    <code class="grow">20%</code>
-    <code class="grow">20%</code>
-  </div>
-  <div class="row">
-    <code class="grow">Grow, it will takes available space</code>
-    <code class="button">Action</code>
+
+  <div>
+    <h4>Horizontal justifying</h4>
+    <div class="row dividers">
+      <div class="grow">
+        <div class="row left">
+          <code>Left</code>
+          <code>Justified</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="row center">
+          <code>Center</code>
+          <code>Justified</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="row right">
+          <code>Right</code>
+          <code>Justified</code>
+        </div>
+      </div>
+      <div class="grow">
+        <div class="row between">
+          <code>Between</code>
+          <code>Justified</code>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<!-- ————————————————————————————————————————————————————— -->
 
-  <!-- Grid -->
-  <h2>Rows and columns</h2>
-  <p>Row or colum display is made using css class and controlling allinment and justified content with css class names.</p>
-
-<!-- CODE EXAMPLE ———————————————————————————————————————— -->
-<div id="example-rows-columns">
-  <!-- .container is main centered wrapper -->
-  <div class="row no-wrap">
-    <div class="card">
-      <div><code>.no-wrap</code> control the flow and avoid to wrap to new lines when it should normally wrap</div>
     </div>
-    <div class="card">Another container that should wrap due to spacing</div>
+    <pre class="code-example spacing"><code class="code-example-body spacing" data-target="#example-rows-columns"></code></pre>
+    <!-- ————————————————————————————————————————————————————— -->
   </div>
-
-  <h4>Vertical alignment</h4>
-  <div class="row no-wrap dividers">
-    <div class="grow">
-      <div class="row top" style="height: 200px;">
-        <code class="grow">Top</code>
-        <code class="grow">Alligned</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="row middle" style="height: 200px;">
-        <code class="grow">Middle</code>
-        <code class="grow">Alligned</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="row bottom" style="height: 200px;">
-        <code class="grow">Bottom</code>
-        <code class="grow">Alligned</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="row stretch" style="height: 200px;">
-        <code class="grow">Stretch</code>
-        <code class="grow">Alligned</code>
-      </div>
-    </div>
-  </div>
-
-  <h4>Horizontal alignment</h4>
-  <div class="row no-wrap dividers">
-    <div class="grow">
-      <div class="column left">
-        <code class="grow">Left</code>
-        <code class="grow">Alligned</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="column center">
-        <code class="grow">Center</code>
-        <code class="grow">Alligned</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="column right">
-        <code class="grow">Right</code>
-        <code class="grow">Alligned</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="column stretch">
-        <code class="grow">Stretch</code>
-        <code class="grow">Alligned</code>
-      </div>
-    </div>
-  </div>
-
-  <h4>Vertical justifying</h4>
-  <div class="row no-wrap dividers">
-    <div class="grow">
-      <div class="column top" style="height: 200px;">
-        <code>Top</code>
-        <code>Justified</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="column middle" style="height: 200px;">
-        <code>Middle</code>
-        <code>Justified</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="column bottom" style="height: 200px;">
-        <code>Bottom</code>
-        <code>Justified</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="column between" style="height: 200px;">
-        <code>Between</code>
-        <code>Justified</code>
-      </div>
-    </div>
-  </div>
-
-  <h4>Horizontal justifying</h4>
-  <div class="column dividers">
-    <div class="grow">
-      <div class="row left">
-        <code>Left</code>
-        <code>Justified</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="row center">
-        <code>Center</code>
-        <code>Justified</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="row right">
-        <code>Right</code>
-        <code>Justified</code>
-      </div>
-    </div>
-    <div class="grow">
-      <div class="row between">
-        <code>Between</code>
-        <code>Justified</code>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ————————————————————————————————————————————————————— -->
-
-  <pre class="code-example"><code class="code-example-body" data-target="#example-rows-columns">
-    </code></pre>
 
   <!-- Typography -->
   <div id="typography">
@@ -225,164 +245,175 @@
           <p><strong>Headings</strong> create a family of distinct sizes each with specific <code>letter-spacing</code>, <code>line-height</code>, and <code>spacings</code>.</p>
         </div>
 
-<!-- CODE EXAMPLE ———————————————————————————————————————— -->
-<div class="cell-6" id="example-typography">
-  <h1>Heading &lt;h1&gt;</h1>
-  <h2>Heading &lt;h2&gt;</h2>
-  <h2>Heading &lt;h3&gt;</h2>
-  <h4>Heading &lt;h4&gt;</h4>
-  <h5>Heading &lt;h5&gt;</h5>
-  <h6>Heading &lt;h6&gt;</h6>
+        <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+        <div class="cell-6" id="example-typography">
 
-  <p>
-    <!-- Other styled text tags -->
-    <strong>Bolded</strong>
-    <em>Italicized</em>
-    <a>Colored</a>
-    <u>Underlined</u>
-  </p>
-</div>
-<!-- ————————————————————————————————————————————————————— -->
+<h1>Heading &lt;h1&gt;</h1>
+<h2>Heading &lt;h2&gt;</h2>
+<h2>Heading &lt;h3&gt;</h2>
+<h4>Heading &lt;h4&gt;</h4>
+<h5>Heading &lt;h5&gt;</h5>
+<h6>Heading &lt;h6&gt;</h6>
 
+<p>
+  <!-- Other styled text tags -->
+  <strong>Bolded</strong>
+  <em>Italicized</em>
+  <a>Colored</a>
+  <u>Underlined</u>
+</p>
+
+        </div>
+        <pre class="code-example spacing"><code class="code-example-body spacing" data-target="#example-typography"></code></pre>
+        <!-- ————————————————————————————————————————————————————— -->
       </div>
     </div>
   </div>
 
-  <pre class="code-example"><code class="code-example-body" data-target="#example-typography">
-    </code></pre>
 
   <!-- Buttons -->
   <div id="buttons">
     <h2>Buttons</h2>
     <p>Buttons come in two basic flavors in Skull. The standard <code>&lt;button&gt;</code> element is plain, whereas the <code>.primary</code> button is vibrant and prominent. Button styles are applied to a number of appropriate form elements, but can also be arbitrarily attached to anchors with a <code>.button</code> class.</p>
 
-<!-- CODE EXAMPLE ———————————————————————————————————————— -->
-<div id="example-button">
-  <div class="spacing row">
-    <!-- Standard buttons -->
-    <button>Button element</button>
-    <a class="button" href="#">Anchor button</a>
-    <input class="button" type="submit" value="submit input">
+    <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+    <div id="example-button">
+
+<div class="spacing row">
+  <!-- Standard buttons -->
+  <button>Button element</button>
+  <a class="button" href="#">Anchor button</a>
+  <input class="button" type="submit" value="submit input">
+</div>
+<div class="spacing row">
+  <!-- Primary buttons -->
+  <button class="primary">Button element</button>
+  <a class="button primary" href="#">Anchor button</a>
+  <input class="button primary" type="submit" value="submit input">
+</div>
+
+    </div>
+    <pre class="code-example spacing"><code class="code-example-body spacing" data-target="#example-button"></code></pre>
+    <!-- ————————————————————————————————————————————————————— -->
   </div>
-  <div class="spacing row">
-    <!-- Primary buttons -->
-    <button class="primary">Button element</button>
-    <a class="button primary" href="#">Anchor button</a>
-    <input class="button primary" type="submit" value="submit input">
+
+  <!-- Cards -->
+  <div id="cards">
+    <h2>Cards, spacing and glued</h2>
+
+    <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+    <div id="example-cards">
+
+<div class="row">
+  <div class="cell-4 card spacing column">
+    <h4>Card 1</h4>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    </p>
+  </div>
+  <div class="cell-4 card spacing column">
+    <h4>Card 2</h4>
+    <p>
+      Lorem ipsum dolor sit amet...
+    </p>
+  </div>
+  <div class="cell-4 card spacing column">
+    <h4>Card 3</h4>
+    <p>
+      Lorem ipsum...
+    </p>
   </div>
 </div>
-<!-- ————————————————————————————————————————————————————— -->
 
-    <pre class="code-example"><code class="code-example-body" data-target="#example-button">
-      </code></pre>
+<div class="row">
+  <div class="cell-4">
+    <div class="column glued">
+      <div class="card">Card</div>
+      <div class="card">Card</div>
+      <div class="card">Card</div>
+    </div>
   </div>
 
-  <!-- Buttons -->
-  <div id="buttons">
-    <h2>Cards, spacing and glued</h2>
-    <div id="example-cards">
-      <div class="row">
-        <div class="cell-4 card spacing column">
-          <h4>Card 1</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          </p>
-        </div>
-        <div class="cell-4 card spacing column">
-          <h4>Card 2</h4>
-          <p>
-            Lorem ipsum dolor sit amet...
-          </p>
-        </div>
-        <div class="cell-4 card spacing column">
-          <h4>Card 3</h4>
-          <p>
-            Lorem ipsum...
-          </p>
-        </div>
+  <div class="cell-4">
+    <div class="row no-wrap glued">
+      <div class="card grow">Card</div>
+      <div class="card grow">Card</div>
+      <div class="card grow">Card</div>
     </div>
-      <div class="row">
-        <div class="cell-4">
-          <div class="column glued">
-            <div class="card"><br /></div>
-            <div class="card"><br /></div>
-            <div class="card"><br /></div>
-          </div>
-        </div>
-        <div class="cell-4">
-          <div class="row no-wrap glued">
-            <div class="card grow"><br /></div>
-            <div class="card grow"><br /></div>
-            <div class="card grow"><br /></div>
-          </div>
-        </div>
-        <div class="cell-4">
-          <div class="column">
-            <div class="row no-wrap glued">
-              <div class="card grow">a</div>
-              <div class="card grow">b</div>
-              <div class="card grow">c</div>
-            </div>
-            <div class="row no-wrap glued">
-              <button class="grow button">⬅️</button>
-              <button class="grow button">⬆️</button>
-              <button class="grow button">➡️</button>
-            </div>
-            <div class="row no-wrap glued">
-              <input class="grow" type="text" placeholder="input..." />
-              <input class="grow" type="text" placeholder="input..." />
-              <input class="grow" type="text" placeholder="input..." />
-            </div>
-          </div>
-        </div>
+  </div>
+
+  <div class="cell-4">
+    <div class="column">
+      <div class="row no-wrap glued">
+        <div class="card grow">Card</div>
+        <div class="card grow">Card</div>
+        <div class="card grow">Card</div>
       </div>
+      <div class="row no-wrap glued">
+        <button class="grow button">Btn</button>
+        <button class="grow button">Btn</button>
+        <button class="grow button">Btn</button>
+      </div>
+      <div class="row no-wrap glued">
+        <input class="grow" type="text" placeholder="input..." />
+        <input class="grow" type="text" placeholder="input..." />
+        <input class="grow" type="text" placeholder="input..." />
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <pre class="code-example spacing"><code class="code-example-body spacing" data-target="#example-cards"></code></pre>
+    <!-- ————————————————————————————————————————————————————— -->
   </div>
 
   <!-- Forms -->
   <div id="forms">
     <h2>Forms</h2>
     <p>Forms are a huge pain, but hopefully these styles make it a bit easier. All inputs, select, and buttons are normalized for a common height cross-browser so inputs can be stacked or placed alongside each other.</p>
-    <div id="example-form">
-      <form>
-        <div class="row">
-          <div class="spacing cell-6">
-            <label for="email">Your email</label>
-            <input id="email" type="email" required placeholder="test@mailbox.com">
-          </div>
-          <div class="spacing cell-6">
-            <label for="reason">Reason for contacting</label>
-            <select id="reason">
-              <option value="Option 1">Questions</option>
-              <option value="Option 2">Admiration</option>
-              <option value="Option 3">Can I get your number?</option>
-            </select>
-          </div>
-        </div>
-        <div class="spacing">
-          <label for="message">Message</label>
-          <textarea id="message" placeholder="Hi Dave 👋"></textarea>
-        </div>
-        <label class="spacing">
-          <!-- Always wrap checkbox and radio inputs in a label -->
-          <input type="checkbox"> Send a copy to yourself
-        </label>
-        <div class="spacing">
-          <input class="button primary" type="submit" value="Submit">
-        </div>
-      </form>
-    </div>
-
 
     <!-- CODE EXAMPLE ———————————————————————————————————————— -->
-    <pre class="code-example"><code class="code-example-body" data-target="#example-form"></code></pre>
+    <div id="example-form">
+
+<form>
+  <div class="row">
+    <div class="spacing cell-6">
+      <label for="email">Your email</label>
+      <input id="email" type="email" required placeholder="test@mailbox.com">
+    </div>
+    <div class="spacing cell-6">
+      <label for="reason">Reason for contacting</label>
+      <select id="reason">
+        <option value="Option 1">Questions</option>
+        <option value="Option 2">Admiration</option>
+        <option value="Option 3">Can I get your number?</option>
+      </select>
+    </div>
+  </div>
+  <div class="spacing">
+    <label for="message">Message</label>
+    <textarea id="message" placeholder="Hi Dave 👋"></textarea>
+  </div>
+  <label class="spacing">
+    <!-- Always wrap checkbox and radio inputs in a label -->
+    <input type="checkbox"> Send a copy to yourself
+  </label>
+  <div class="spacing">
+    <input class="button primary" type="submit" value="Submit">
+  </div>
+</form>
+
+    </div>
+    <pre class="code-example spacing"><code class="code-example-body spacing" data-target="#example-form"></code></pre>
     <!-- ————————————————————————————————————————————————————— -->
   </div>
 
   <!-- Lists -->
   <div id="lists">
     <h2>Lists</h2>
-    <div class="row ">
-      <div class="six cells">
+    <div class="row dividers">
+      <div class="cell-6">
         <ul>
           <li>Unordered lists have basic styles</li>
           <li>
@@ -395,122 +426,87 @@
           <li>Just more list items mama san</li>
         </ul>
       </div>
-      <div class="six columns">
-        <ol>
-          <li>Ordered lists also have basic styles</li>
-          <li>
-            They use the decimal list style
-            <ul>
-              <li>Ordered and unordered can be nested</li>
-              <li>Can nest either type of list into the other</li>
-            </ul>
-          </li>
-          <li>Last list item just for the fun</li>
-        </ol>
+
+      <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+      <div class="cell-6" id="example-list">
+
+<ol>
+  <li>Ordered lists also have basic styles</li>
+  <li>
+    They use the decimal list style
+    <ul>
+      <li>Ordered and unordered can be nested</li>
+      <li>Can nest either type of list into the other</li>
+    </ul>
+  </li>
+  <li>Last list item just for the fun</li>
+</ol>
+
       </div>
+      <!-- ————————————————————————————————————————————————————— -->
     </div>
 
-
-<!-- CODE EXAMPLE ———————————————————————————————————————— -->
-<pre class="code-example"><code class="code-example-body"><ul>
-<li>Item 1</li>
-<li>
-  Item 2
-  <ul>
-    <li>Item 2.1</li>
-    <li>Item 2.2</li>
-  </ul>
-</li>
-<li>Item 3</li>
-</ul>
-
-<!-- Easily substitute any <ul> or an <ol> to get number lists or sublists. Skull doesn't support lists nested deeper than 2 levels -->
-</code></pre>
-<!-- ————————————————————————————————————————————————————— -->
-
-
+    <pre class="code-example spacing"><code class="code-example-body spacing" data-target="#example-list"></code></pre>
   </div>
 
   <!-- Code -->
   <div id="code">
     <h2>Code</h2>
     <p>Code styling is kept basic – just wrap anything in a <code>&lt;code&gt;</code> and it will appear like <code>this</code>. For blocks of code, wrap a <code>&lt;code&gt;</code> with a <code>&lt;pre&gt;</code>.</p>
-    <div class="">
+
+    <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+    <div id="example-code">
+
 <pre><code>.some-class {
-background-color: red;</code></pre>
+  background-color: red;
+}
+</code></pre>
+<!-- Remember every whitespace and break will be preserved in a <pre>,
+     including indentation in your code -->
+
     </div>
 
-
-<!-- CODE EXAMPLE ———————————————————————————————————————— -->
-<pre class="code-example"><code class="code-example-body"><pre><code>.some-class {
-background-color: red;</code></pre>
-
-<!-- Remember every whitespace and break will be preserved in a <pre>, including indentation in your code -->
-</code></pre>
-<!-- ————————————————————————————————————————————————————— -->
-
-
+    <pre class="code-example spacing"><code class="code-example-body spacing" data-target="#example-code"></code></pre>
+    <!-- ————————————————————————————————————————————————————— -->
   </div>
 
   <!-- Tables -->
   <div id="tables">
     <h2>Tables</h2>
     <p>Be sure to use properly formed table markup with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> when building a <code>table</code>.</p>
-    <div class="">
-      <table class="u-full-width">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Sex</th>
-            <th>Location</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Dave Gamache</td>
-            <td>26</td>
-            <td>Male</td>
-            <td>San Francisco</td>
-          </tr>
-          <tr>
-            <td>Dwayne Johnson</td>
-            <td>42</td>
-            <td>Male</td>
-            <td>Hayward</td>
-          </tr>
-        </tbody>
-      </table>
+
+    <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+    <div id="example-table">
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dave Gamache</td>
+      <td>26</td>
+      <td>Male</td>
+      <td>San Francisco</td>
+    </tr>
+    <tr>
+      <td>Scarlett Johansson</td>
+      <td>36</td>
+      <td>Female</td>
+      <td>New York City</td>
+    </tr>
+  </tbody>
+</table>
     </div>
 
-
-<!-- CODE EXAMPLE ———————————————————————————————————————— -->
-<pre class="code-example"><code class="code-example-body"><table class="u-full-width">
-<thead>
-  <tr>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Sex</th>
-    <th>Location</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Dave Gamache</td>
-    <td>26</td>
-    <td>Male</td>
-    <td>San Francisco</td>
-  </tr>
-  <tr>
-    <td>Dwayne Johnson</td>
-    <td>42</td>
-    <td>Male</td>
-    <td>Hayward</td>
-  </tr>
-</tbody>
-</table>
-</code></pre>
-<!-- ————————————————————————————————————————————————————— -->
+    <pre class="code-example spacing"><code class="code-example-body spacing" data-target="#example-table">
+    </code></pre>
+    <!-- ————————————————————————————————————————————————————— -->
 
 
   </div>
@@ -536,8 +532,9 @@ background-color: red;</code></pre>
     </div>
 
 
-<!-- CODE EXAMPLE ———————————————————————————————————————— -->
-<pre class="code-example"><code class="code-example-body">/* Mobile first queries */
+    <!-- CODE EXAMPLE ———————————————————————————————————————— -->
+    <pre class="code-example spacing"><code class="code-example-body spacing">
+/* Mobile first queries */
 
 /* Larger than mobile */
 @media (min-width: 400px) {}
@@ -553,14 +550,9 @@ background-color: red;</code></pre>
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
-
-
-</code></pre>
-<!-- ————————————————————————————————————————————————————— -->
-
-
+    </code></pre>
+    <!-- ————————————————————————————————————————————————————— -->
   </div>
-
 
   <!-- Utilities and Misc. -->
   <div id="utilities">
@@ -569,41 +561,30 @@ background-color: red;</code></pre>
 
 
 <!-- CODE EXAMPLE ———————————————————————————————————————— -->
-<pre class="code-example"><code class="code-example-body">/* Utility Classes */
-
-/* Make element full width */
-.u-full-width {
-  width: 100%;
-  box-sizing: border-box; }
-
-/* Make sure elements don't run outside containers (great for images in columns) */
-.u-max-full-width {
-  max-width: 100%;
-  box-sizing: border-box; }
-
-/* Float either direction */
-.u-pull-right {
-  float: right; }
-.u-pull-left {
-  float: left; }
-
-/* Clear a float */
-.u-cf {
-  content: "";
-  display: table;
-  clear: both; }
+<pre class="code-example spacing"><code class="code-example-body spacing">
+  Yeah... It's not done yet... Sorry
 </code></pre>
 <!-- ————————————————————————————————————————————————————— -->
   </div>
 </div>
 
 <script>
-  document.querySelectorAll('.code-example-body').forEach(function(e) {
-    if (e.dataset.target) {
-      e.innerText = document.querySelector(e.dataset.target).innerHTML;
+  document.querySelectorAll('.code-example').forEach(function(e) {
+    const body = e.querySelector('.code-example-body');
+    body.style.display = 'none';
+
+    if (body.dataset.target) {
+      body.innerText = document.querySelector(body.dataset.target).innerHTML.trim();
     } else {
-      e.innerText = e.innerHTML;
+      body.innerText = body.innerHTML.trim();
     }
+
+    var btn = document.createElement('button');
+    btn.innerText = 'View code';
+    btn.onclick = function() {
+      body.style.display = body.style.display == 'none' ? 'block' : 'none';
+    }
+    e.prepend(btn);
   });
 </script>
 </body>

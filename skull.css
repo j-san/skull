@@ -4,20 +4,35 @@
 :root {
   --spacing: 1rem;
   --border-radius: 4px;
-  --foreground: #222;
-  --foreground-muted: #888;
-  --background: #fff;
-  --background-rised: #eee;
+  --color-scale-1: #fff;
+  --color-scale-2: #eee;
+  --color-scale-3: #555;
+  --color-scale-4: #222;
   --color-negative: #e66;
   --color-positive: #6e6;
-  --color-invalid: var(--color-negative);
-  --color-valid: var(--color-positive);
   --color-warning: #ea4;
   --color-info: #8ef;
   --color-primary: #66e;
   --color-link: #1eaedb;
+
+  /* theme colors */
+  --foreground: var(--color-scale-4);
+  --foreground-muted: var(--color-scale-3);
+  --background-rised: var(--color-scale-2);
+  --background: var(--color-scale-1);
+  --color-invalid: var(--color-negative);
+  --color-valid: var(--color-positive);
   --body-font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
   --title-font-family: var(--body-font-family);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: var(--color-scale-1);
+    --foreground-muted: var(--color-scale-2);
+    --background-rised: var(--color-scale-3);
+    --background: var(--color-scale-4);
+  }
 }
 
 html {
@@ -32,6 +47,7 @@ body {
   font-weight: 400;
   font-family: var(--body-font-family);
   color: var(--foreground);
+  background-color: var(--background);
 }
 
 * {
@@ -112,10 +128,6 @@ h6 {
   h6 { font-size: 1.2em; }
 }
 
-p {
-  margin-top: 0;
-}
-
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
@@ -187,20 +199,17 @@ form > * {
   margin-bottom: var(--spacing);
 }
 
-/* Removes awkward default styles on some inputs for iOS */
-input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
-textarea {
-  appearance: none;
-}
-
 input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="submit"]),
 textarea,
 select {
+  appearance: none;
+  -webkit-appearance: none;
   height: 38px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: var(--background);
   border: 1px solid var(--foreground-muted);
   border-radius: var(--border-radius);
+  color: var(--foreground-muted);
   box-shadow: none;
   font-size: 1.5rem;
   width: 100%;
@@ -372,6 +381,7 @@ a.card {
 
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+p,
 .spacing {
   margin-top: var(--spacing);
   margin-bottom: var(--spacing);
@@ -521,11 +531,19 @@ a.card {
   bottom: calc(var(--spacing) * -1);
 }
 
+.row.glued.dividers > *:not(:last-child)::after,
+.column.glued.dividers > *:not(:last-child)::after {
+  top: 100%;
+  bottom: 0;
+}
+
 .stripped > *:nth-child(2n+1) {
   background-color: var(--light-grey);
 }
 
-@media (min-width: 960px) {
+/* soon customizable beark-point https://drafts.csswg.org/css-env-1/ */
+
+@media (min-width: 600px) {
   .row.dividers > *:not(:last-child)::after {
     border-right: 1px solid var(--foreground);
     border-bottom: none;
@@ -535,9 +553,12 @@ a.card {
     left: calc(100% + var(--spacing) * -1);
     right: calc(var(--spacing) * -1);
   }
-}
 
-@media (min-width: 960px) {
+  .row.glued.dividers > *:not(:last-child)::after {
+    left: 100%;
+    right: 0;
+  }
+
   .row {
     margin-top: var(--spacing);
     margin-bottom: var(--spacing);
@@ -638,24 +659,24 @@ a.card {
 
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-hr {
-  margin-top: var(--spacing);
-  margin-bottom: var(--spacing);
-  border-width: 0;
-  border-top: 1px solid var(--foreground-muted);
-}
 
+hr,
 .divider {
   border-width: 0;
   border-top: 1px solid var(--foreground-muted);
   margin: 0;
 }
 
+hr {
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
+}
+
 @media (min-width: 600px) {
-  .divider {
+  .row > hr,
+  .row > .divider {
     border-width: 0;
     border-left: 1px solid var(--foreground-muted);
-    margin: 0;
     margin-left: -1px;
   }
 }

@@ -2,14 +2,14 @@
   "name": "@skull-css/base",
   "version": "1.0.0",
   "description": "Yet Another CSS Library, but Modern 🤘",
-  "main": "skull.css",
+  "main": "src/skull.css",
   "scripts": {
     "test": "npm run stylelint:test && npm run cypress:run",
     "stylelint:test": "stylelint \"**/*.css\"",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "start": "http-server . -c-1",
-    "build": "mkdir dist && cp index.html skull.css dist"
+    "start": "http-server src -c-1",
+    "build": "rm -rf dist && cp src dist"
   },
   "repository": {
     "type": "git",

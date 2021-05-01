@@ -143,7 +143,9 @@ a:not(.button):focus {
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 button,
-.button {
+.button,
+[type="submit"],
+[type="button"] {
   display: inline-block;
   height: 38px;
   margin: 0;
@@ -164,7 +166,9 @@ button,
 }
 
 button:disabled,
-.button:disabled {
+.button:disabled,
+[type="submit"]:disabled,
+[type="button"]:disabled {
   pointer-events: auto;
   cursor: not-allowed;
   opacity: 0.5;
@@ -181,14 +185,24 @@ button:focus:not(:disabled),
 button.active:not(:disabled),
 .button:hover:not(:disabled),
 .button:focus:not(:disabled),
-.button.active:not(:disabled) {
+.button.active:not(:disabled),
+[type="submit"]:hover:not(:disabled),
+[type="submit"]:focus:not(:disabled),
+[type="submit"].active:not(:disabled),
+[type="button"]:hover:not(:disabled),
+[type="button"]:focus:not(:disabled),
+[type="button"].active:not(:disabled) {
   filter: brightness(90%);
 }
 
 button.primary:focus,
 button.primary:hover,
 .button.primary:focus,
-.button.primary:hover {
+.button.primary:hover,
+[type="submit"].primary:focus,
+[type="submit"].primary:hover,
+[type="button"].primary:focus,
+[type="button"].primary:hover {
   filter: brightness(110%);
 }
 
@@ -199,11 +213,30 @@ form > * {
   margin-bottom: var(--spacing);
 }
 
-input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="submit"]),
+input:not([type]),
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input:not([type]),
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
 textarea,
 select {
-  appearance: none;
-  -webkit-appearance: none;
   height: 38px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: var(--background);
@@ -222,14 +255,28 @@ textarea {
   padding-bottom: 6px;
 }
 
-input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="submit"]):focus,
+input:not([type]):focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
 textarea:focus,
 select:focus {
   border: 1px solid var(--color-info);
   outline: 0;
 }
 
-input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="submit"]):invalid:not(:placeholder-shown),
+input:not([type]):invalid:not(:placeholder-shown),
+input[type="email"]:invalid:not(:placeholder-shown),
+input[type="number"]:invalid:not(:placeholder-shown),
+input[type="search"]:invalid:not(:placeholder-shown),
+input[type="text"]:invalid:not(:placeholder-shown),
+input[type="tel"]:invalid:not(:placeholder-shown),
+input[type="url"]:invalid:not(:placeholder-shown),
+input[type="password"]:invalid:not(:placeholder-shown),
 textarea:invalid:not(:placeholder-shown),
 select:invalid:not(:placeholder-shown) {
   border: 1px solid var(--color-invalid);
@@ -362,13 +409,11 @@ td:last-child {
   border: 1px solid var(--foreground);
   border-radius: var(--border-radius);
   background-color: var(--background);
-  overflow: auto;
 }
 
 .card > .content {
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
   margin-left: calc(-1 * var(--spacing));
   margin-right: calc(-1 * var(--spacing));
   padding-left: var(--spacing);
@@ -383,23 +428,23 @@ a.card {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 p,
 .spacing {
-  margin-top: var(--spacing);
-  margin-bottom: var(--spacing);
+  margin-top: var(--spacing) !important;
+  margin-bottom: var(--spacing) !important;
 }
 
 .spacing-x2 {
-  margin-top: calc(var(--spacing) * 2);
-  margin-bottom: calc(var(--spacing) * 2);
+  margin-top: calc(var(--spacing) * 2) !important;
+  margin-bottom: calc(var(--spacing) * 2) !important;
 }
 
 .spacing-x4 {
-  margin-top: calc(var(--spacing) * 4);
-  margin-bottom: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 4) !important;
+  margin-bottom: calc(var(--spacing) * 4) !important;
 }
 
 .spacing-x8 {
-  margin-top: calc(var(--spacing) * 8);
-  margin-bottom: calc(var(--spacing) * 8);
+  margin-top: calc(var(--spacing) * 8) !important;
+  margin-bottom: calc(var(--spacing) * 8) !important;
 }
 
 .spacing-0 {
@@ -408,23 +453,23 @@ p,
 }
 
 .margin {
-  margin-left: var(--spacing);
-  margin-right: var(--spacing);
+  margin-left: var(--spacing) !important;
+  margin-right: var(--spacing) !important;
 }
 
 .margin-x2 {
-  margin-left: calc(var(--spacing) * 2);
-  margin-right: calc(var(--spacing) * 2);
+  margin-left: calc(var(--spacing) * 2) !important;
+  margin-right: calc(var(--spacing) * 2) !important;
 }
 
 .margin-x4 {
-  margin-left: calc(var(--spacing) * 4);
-  margin-right: calc(var(--spacing) * 4);
+  margin-left: calc(var(--spacing) * 4) !important;
+  margin-right: calc(var(--spacing) * 4) !important;
 }
 
 .margin-x8 {
-  margin-left: calc(var(--spacing) * 8);
-  margin-right: calc(var(--spacing) * 8);
+  margin-left: calc(var(--spacing) * 8) !important;
+  margin-right: calc(var(--spacing) * 8) !important;
 }
 
 .margin-0 {
@@ -433,11 +478,11 @@ p,
 }
 
 .padding {
-  padding: var(--spacing);
+  padding: var(--spacing) !important;
 }
 
 .padding-x2 {
-  padding: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2) !important;
 }
 
 .padding-0 {
@@ -445,35 +490,37 @@ p,
 }
 
 .padding-horizontal {
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
+  padding-left: var(--spacing) !important;
+  padding-right: var(--spacing) !important;
 }
 
 .padding-x2-horizontal {
-  padding-left: calc(var(--spacing) * 2);
-  padding-right: calc(var(--spacing) * 2);
+  padding-left: calc(var(--spacing) * 2) !important;
+  padding-right: calc(var(--spacing) * 2) !important;
 }
 
 .padding-vertical {
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  padding-top: var(--spacing) !important;
+  padding-bottom: var(--spacing) !important;
 }
 
 .padding-x2-vertical {
-  padding-top: calc(var(--spacing) * 2);
-  padding-bottom: calc(var(--spacing) * 2);
+  padding-top: calc(var(--spacing) * 2) !important;
+  padding-bottom: calc(var(--spacing) * 2) !important;
 }
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 .flex {
   display: flex;
 }
 
 .row {
   display: flex;
-  flex-flow: wrap;
+  flex-flow: row wrap;
+}
+
+.row:not(.glued) {
   margin-left: calc(-1 * var(--spacing));
   margin-right: calc(-1 * var(--spacing));
 }
@@ -514,49 +561,71 @@ p,
 .column.middle { justify-content: center; }
 .column.between { justify-content: space-between; }
 
+.stripped > *:nth-child(2n) {
+  background-color: var(--background);
+}
+
+.stripped > *:nth-child(2n+1) {
+  background-color: var(--background-rised);
+}
+
 .row.dividers > *,
 .column.dividers > * {
   position: relative;
 }
 
-.row.dividers > *:not(:last-child)::after,
-.column.dividers > *:not(:last-child)::after {
+.row.dividers > *:not(:first-child)::before,
+.column.dividers > *:not(:first-child)::before {
   content: ' ';
   display: flex;
-  border-bottom: 1px solid var(--foreground);
+  border-top: 1px solid var(--foreground);
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(100% + var(--spacing));
-  bottom: calc(var(--spacing) * -1);
+  top: calc(var(--spacing) * -1);
+  bottom: calc(100% + var(--spacing));
 }
 
-.row.glued.dividers > *:not(:last-child)::after,
-.column.glued.dividers > *:not(:last-child)::after {
-  top: 100%;
-  bottom: 0;
+.row.glued.dividers > *:not(:first-child)::before,
+.column.glued.dividers > *:not(:first-child)::before {
+  top: 0;
+  bottom: calc(100% - 1px);
 }
 
-.stripped > *:nth-child(2n+1) {
-  background-color: var(--light-grey);
+.column.glued > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.column.glued > *:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.column.glued > *:not(:first-child) {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 /* soon customizable beark-point https://drafts.csswg.org/css-env-1/ */
 
 @media (min-width: 600px) {
-  .row.dividers > *:not(:last-child)::after {
-    border-right: 1px solid var(--foreground);
-    border-bottom: none;
+  .row.dividers > *:not(:first-child)::before {
+    border-left: 1px solid var(--foreground);
+    border-top: none;
     position: absolute;
     top: 0;
     bottom: 0;
-    left: calc(100% + var(--spacing) * -1);
-    right: calc(var(--spacing) * -1);
+    left: calc(var(--spacing) * -1);
+    right: calc(var(--spacing) + 100% - 1px);
   }
 
-  .row.glued.dividers > *:not(:last-child)::after {
-    left: 100%;
-    right: 0;
+  .row.glued.dividers > *:not(:first-child)::before {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: calc(100% - 1px);
   }
 
   .row {
@@ -579,28 +648,20 @@ p,
     flex-basis: 0;
   }
 
-  .column.glued > *:not(:last-child) {
-    margin-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  .column.glued > *:not(:first-child) {
-    margin-top: -1px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  .row.glued > * {
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .row.glued > *:not(:last-child) {
-    margin-right: 0 !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .row.glued > *:not(:first-child) {
-    margin-left: -1px !important;
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   .cell-1 { width: calc(1 * 100% / 12 - var(--spacing) * 2) !important; }
@@ -655,6 +716,22 @@ p,
 
 .right {
   text-align: right;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
+
+.scroll {
+  overflow: auto;
+}
+
+.scroll-x {
+  overflow-x: auto;
+}
+
+.scroll-y {
+  overflow-y: auto;
 }
 
 /* Misc

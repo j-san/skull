@@ -8,6 +8,7 @@
     "stylelint:test": "stylelint \"**/*.css\"",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
+    "cypress:update": "CYPRESS_autoCleanUp=true CYPRESS_updateSnapshots=true cypress run",
     "start": "http-server src -c-1",
     "build": "rm -rf dist && cp src dist"
   },

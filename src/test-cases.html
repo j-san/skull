@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skull - Test Cases</title>
+  <link href="skull.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="description" content="Yet Another CSS Library, but Modern 🤘">
+  <meta name="author" content="Jonathan Sanchez">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" />
+  <style>
+    :root {
+      --body-font-family: Raleway;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container spacing">
+  <h1>Skull - Test Cases</h1>
+  <div>Some more visual regression test cases for Cypress.</div>
+  <div>
+    <h4>Rows in glued column</h4>
+    <nav class="card column glued stripped dividers">
+      <a class="row no-wrap middle padding" href="#">
+        <img src="https://via.placeholder.com/50.jpg" class="fluid" />
+        Eelis Lehto
+      </a>
+      <a class="row no-wrap middle padding" href="#">
+        <img src="https://via.placeholder.com/50.jpg" class="fluid" />
+        Peer Nagy
+      </a>
+      <a class="row no-wrap middle padding" href="#">
+        <img src="https://via.placeholder.com/50.jpg" class="fluid" />
+        Gavin Freeman
+      </a>
+      <a class="row no-wrap middle padding" href="#">
+        <img src="https://via.placeholder.com/50.jpg" class="fluid" />
+        Naomi Wilson
+      </a>
+    </nav>
+  </div>
+
+  <div>
+    <h4>Glued dividers rows & colums</h4>
+    <div class="row no-wrap">
+      <nav class="card column glued dividers stripped no-overflow grow padding-0">
+        <a class="padding" href="#">
+          Nav
+        </a>
+        <a class="padding" href="#">
+          Nav
+        </a>
+        <a class="padding" href="#">
+          Nav
+        </a>
+        <a class="padding" href="#">
+          Nav
+        </a>
+      </nav>
+
+      <nav class="card row glued dividers stripped no-overflow grow padding-0">
+        <a class="padding grow" href="#">
+          Nav
+        </a>
+        <a class="padding grow" href="#">
+          Nav
+        </a>
+        <a class="padding grow" href="#">
+          Nav
+        </a>
+        <a class="padding grow" href="#">
+          Nav
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <div>
+    <h4>Glued bordered divs rows & colums</h4>
+    <div class="row no-wrap">
+      <div class="column glued grow stripped">
+        <div class="card padding grow" href="#">
+          Card
+        </div>
+        <div class="card padding grow" href="#">
+          Card
+        </div>
+        <div class="card padding grow" href="#">
+          Card
+        </div>
+        <div class="card padding grow" href="#">
+          Card
+        </div>
+      </div>
+
+      <div class="row glued grow stripped">
+        <div class="card grow" href="#">
+          Card
+        </div>
+        <div class="card grow" href="#">
+          Card
+        </div>
+        <div class="card grow" href="#">
+          Card
+        </div>
+        <div class="card grow" href="#">
+          Card
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h4>Forms input types</h4>
+    <form>
+      <input placeholder="default" />
+      <input type="email" placeholder="email" />
+      <input type="number" placeholder="number" />
+      <input type="search" placeholder="search" />
+      <input type="text" placeholder="text" />
+      <input type="tel" placeholder="tel" />
+      <input type="url" placeholder="url" />
+      <input type="password" placeholder="password" />
+      <select>
+        <option>select</option>
+        <option>select</option>
+        <option>select</option>
+      </select>
+      <textarea placeholder="textarea"></textarea>
+      <label>
+        <input type="radio" />
+        radio
+      </label>
+      <label>
+        <input type="checkbox" />
+        checkbox
+      </label>
+      <div>
+        <input type="range" />
+      </div>
+      <input type="submit" value="submit" />
+      <input type="button" value="button" />
+    </form>
+</div>
+</body>

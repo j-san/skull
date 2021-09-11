@@ -702,19 +702,19 @@ p,
   float: left;
 }
 
-.clear {
+.float-clear {
   clear: both;
 }
 
-.center {
+.text-center {
   text-align: center;
 }
 
-.left {
+.text-left {
   text-align: left;
 }
 
-.right {
+.text-right {
   text-align: right;
 }
 

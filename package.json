@@ -10,7 +10,7 @@
     "cypress:run": "cypress run",
     "cypress:update": "CYPRESS_updateSnapshots=true cypress run",
     "start": "http-server src -c-1",
-    "build": "rm -rf dist && cp src dist"
+    "build": "rm -rf dist && cp -r src dist"
   },
   "repository": {
     "type": "git",
